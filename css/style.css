@@ -31,7 +31,7 @@ ul {
   justify-content: center;
   align-items: center;
 }
-.container .fylo {
+.fylo {
   background-color: var(--dark-blue);
   border-radius: var(--radius);
   border-top-right-radius: 90px;
@@ -59,7 +59,12 @@ ul {
   margin: 20px 0;
   position: relative;
 }
-.info > p > span {
+.info > h1 {
+  font-size: 14px;
+  font-weight: normal;
+  margin-bottom: 18px;
+}
+.info > h1 > span {
   font-weight: bold;
   display: inline-block;
   padding: 0 3px;
@@ -68,8 +73,8 @@ ul {
   display: flex;
   align-items: center;
   background-color: var(--blue);
-  height: 20px;
-  width: 220px;
+  height: 15px;
+  width: 235px;
   border-radius: var(--radius);
   position: relative;
 }
@@ -78,7 +83,7 @@ ul {
   position: relative;
   background-color: hsl(344deg 100% 72%);
   width: 180px;
-  height: 17px;
+  height: 13px;
   border-radius: var(--radius);
 }
 .info .storage-percent > span::after {
@@ -114,7 +119,7 @@ ul {
   width: 180px;
   left: 50%;
   transform: translateX(-50%);
-  padding: 20px 15px;
+  padding: 15px;
   border-radius: var(--radius);
 }
 
@@ -148,6 +153,7 @@ ul {
   .info .info-footer {
     bottom: 80%;
     left: 75%;
+    padding: 20px 15px;
   }
   .info .info-footer::after {
     position: absolute;
