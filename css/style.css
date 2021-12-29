@@ -1,0 +1,161 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+:root {
+  --very-dark-blue: hsl(229, 57%, 11%);
+  --dark-blue: hsl(228, 56%, 26%);
+  --blue: hsl(228deg 58% 19%);
+  --gray-blue: hsl(229, 7%, 55%);
+  --pale-blue: hsl(243, 100%, 93%);
+  --radius: 10px;
+}
+body {
+  padding: 0;
+  font-size: 14px;
+  color: var(--pale-blue);
+  font-family: "Raleway", sans-serif;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.container {
+  height: 100vh;
+  background: url("../images/bg-mobile.png") top left;
+  background-size: cover;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container .fylo {
+  background-color: var(--dark-blue);
+  border-radius: var(--radius);
+  border-top-right-radius: 90px;
+  padding: 20px 40px;
+}
+.fylo > ul {
+  display: flex;
+  align-items: center;
+  margin: 40px 0 0;
+}
+.fylo > ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 55px;
+  height: 55px;
+  background-color: var(--very-dark-blue);
+  margin: 0 10px 10px 0;
+  border-radius: var(--radius);
+}
+.info {
+  background-color: var(--dark-blue);
+  border-radius: var(--radius);
+  padding: 35px 25px 70px;
+  margin: 20px 0;
+  position: relative;
+}
+.info > p > span {
+  font-weight: bold;
+  display: inline-block;
+  padding: 0 3px;
+}
+.info .storage-percent {
+  display: flex;
+  align-items: center;
+  background-color: var(--blue);
+  height: 20px;
+  width: 220px;
+  border-radius: var(--radius);
+  position: relative;
+}
+.info .storage-percent > span {
+  display: block;
+  position: relative;
+  background-color: hsl(344deg 100% 72%);
+  width: 180px;
+  height: 17px;
+  border-radius: var(--radius);
+}
+.info .storage-percent > span::after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  right: 0;
+}
+.info .storage-percent::before {
+  content: "0 GB";
+  left: 0;
+}
+.info .storage-percent::after {
+  content: "1000 GB";
+  right: 0;
+}
+.info .storage-percent::before,
+.info .storage-percent::after {
+  position: absolute;
+  top: 30px;
+  font-weight: bold;
+}
+.info .info-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  position: absolute;
+  bottom: -35px;
+  width: 180px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 20px 15px;
+  border-radius: var(--radius);
+}
+
+.info .info-footer > span:not(:last-child) {
+  display: inline-block;
+  color: black;
+  font-weight: 900;
+  font-size: 25px;
+  position: relative;
+}
+.info .info-footer > span:last-child {
+  text-transform: uppercase;
+  color: hsl(240deg 3% 67%);
+  padding-left: 15px;
+}
+/* Start Media */
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    gap: 30px;
+    background: url("../images/bg-desktop.png") bottom left no-repeat;
+    background-color: var(--very-dark-blue);
+  }
+  .info {
+    width: 500px;
+    position: relative;
+  }
+  .info .storage-percent {
+    width: 450px;
+  }
+  .info .info-footer {
+    bottom: 80%;
+    left: 75%;
+  }
+  .info .info-footer::after {
+    position: absolute;
+    content: "";
+    border-width: 32px;
+    border-color: transparent white transparent transparent;
+    border-style: solid;
+    right: 0;
+    bottom: -20px;
+  }
+}
